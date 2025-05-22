@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+{{-- to deoo  --}}
 <head>
     <meta charset="UTF-8">
     <title>VeggieStore</title>
@@ -9,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="{{ asset('asset/css/hero.css') }}">
-        <link rel="stylesheet" href="{{ asset('asset/css/nav.css') }}">
         <link rel="stylesheet" href="{{ asset('asset/css/user.css') }}">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <style>
@@ -124,47 +124,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    @auth('web')
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('products.index') }}">Products</a>
-                        </li>
+                    @auth
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('cart.index') }}">Cart</a>
-                        </li>
-                        <li class="nav-item">
-                            <form method="POST" action="{{ route('logout') }}" class="d-inline">
-                                @csrf
-                                <button type="submit" class="nav-link btn btn-link" style="border: none; background: none;">
-                                    Logout
-                                </button>
-                            </form>
-                        </li>
                     @endauth
-                    @auth('admin')
+
+                    @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                            <a class="nav-link" href="{{ route('login') }}">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.products.index') }}">Products</a>
+                            <a class="nav-link" href="{{ route('register') }}">Register</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.categories.index') }}">Categories</a>
-                        </li>
-                        <li class="nav-item">
-                            <form method="POST" action="{{ route('admin.logout') }}" class="d-inline">
-                                @csrf
-                                <button type="submit" class="nav-link btn btn-link" style="border: none; background: none;">
-                                    Logout
-                                </button>
-                            </form>
-                        </li>
-                    @endauth
+                    @endguest
                 </ul>
             </div>
         </div>

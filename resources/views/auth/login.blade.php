@@ -1,4 +1,10 @@
 <x-guest-layout>
+    <!-- User Login Icon -->
+    <div class="text-center mb-4">
+        <i class="fas fa-user-circle fa-3x" style="color: #4f46e5;"></i>
+        <h2 class="text-lg font-semibold text-gray-700 mt-2">User Login</h2>
+    </div>
+
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -15,12 +21,10 @@
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
-
             <x-text-input id="password" class="block mt-1 w-full"
                             type="password"
                             name="password"
                             required autocomplete="current-password" />
-
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
