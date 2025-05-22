@@ -1,0 +1,85 @@
+/* Vertical Sidebar Navbar */
+.navbar-custom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 220px;
+    /* background-color: #198754;   */ /* background color will be used from bootstrap inline change it if you custom or change from inline bot */
+    padding-top: 1rem;
+    z-index: 1030;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.navbar-custom .navbar-brand {
+    color: #fff;
+    font-weight: bold;
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    height: 40px;            
+    line-height: 40px;       
+    display: block;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+
+.navbar-custom .container-fluid {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+.navbar-custom .navbar-collapse {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.5rem;
+}
+
+
+.navbar-custom .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    padding-left: 0;
+}
+
+/* Nav links */
+.navbar-custom .nav-link {
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.3rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link:focus,
+.navbar-custom .nav-link.active {
+    background-color: #157347;
+    color: #ffffff;
+}
+
+/* Hide toggler for sidebar */
+.navbar-custom .navbar-toggler {
+    display: none;
+}
+
+/* Adjust content area to make space for sidebar */
+@media (min-width: 768px) {
+    body {
+        margin-left: 220px;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+}

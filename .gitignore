@@ -1,0 +1,45 @@
+# Laravel standard
+/vendor
+/node_modules
+/public/storage
+/storage/*.key
+.env
+.env.*.php
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+.vscode
+.idea
+.DS_Store
+*.swp
+
+# Laravel 8+ specific (cache and config)
+bootstrap/cache/*.php
+
+# Laravel Mix / Vite
+/public/hot
+/public/mix-manifest.json
+/public/build
+
+# Database & IDE
+*.sqlite
+*.sqlite3
+*.log
+*.sql
+*.bak
+
+# OS generated
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Composer
+composer.lock
+
+# JetBrains (PHPStorm etc.)
+.idea/
+
+# Laravel Telescope (if used)
+storage/telescope

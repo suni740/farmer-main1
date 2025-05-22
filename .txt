@@ -1,0 +1,11 @@
+INSERT INTO `admins` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`)
+VALUES ('1', 'John Doe', 'johndoe@example.com', NOW(), '$2y$12$7kTochrFShAK9Itfs1rC/eCsLrm0LIlwVbHKeHwnndFNA4thMfJ22', NULL, NOW(), NOW());
+
+bcrypt('your-password-here')
+
+compoer install
+npm install
+npm run build
+php artisan key:generate
+php artisan migrate
+php artisan migrate:fresh
