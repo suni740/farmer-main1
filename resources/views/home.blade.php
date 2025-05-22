@@ -6,6 +6,9 @@
 </div> --}}
     {{-- <link rel="stylesheet" href="{{ asset('asset/css/hero.css') }}"> --}}
 
+
+    
+
     <div class="herosection">
         <Navbar />
         <div class="lowerHerosection">
