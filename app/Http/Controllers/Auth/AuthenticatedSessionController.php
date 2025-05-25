@@ -24,6 +24,11 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
+        //remove all active sessions for the user
+        $user = Auth::guard('admin')->user();
+        if ($user) {
+            Auth::guard('admin')->logout();
+        }
         $request->authenticate();
 
         $request->session()->regenerate();

@@ -82,8 +82,10 @@ class CartController extends Controller
         return redirect()->back()->with('success', 'Product removed!');
     }
 
-    public function checkout()
+    public function checkout(Request $request)
     {
+        session(['address' => $request->address]);
+        session(['phone' => $request->phone]);
         $cart = session()->get('cart', []);
         $total = collect($cart)->sum(function ($item) {
             return $item['price'] * $item['quantity'];
@@ -114,6 +116,8 @@ class CartController extends Controller
             $order = Order::create([
                 'user_id' => $user->id,
                 'total_price' => $total,
+                'address' => session('address'),
+                'phone' => session('phone')
             ]);
 
             foreach ($cart as $productId => $item) {

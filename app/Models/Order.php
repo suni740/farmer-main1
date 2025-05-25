@@ -13,6 +13,8 @@ class Order extends Model
     protected $fillable = [
         'user_id',
         'total_price',
+        'address',
+        'phone'
     ];
 
     protected $dates = ['deleted_at'];

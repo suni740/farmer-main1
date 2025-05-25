@@ -10,21 +10,17 @@
                 </div>
                 <p>Bringing the Freshest, Nutritious Vegetables Straight from the Farm to Your Table, Ensuring Health and
                     Flavor in Every Bite!</p>
-                <div class="searchBox" style="position: relative; display: flex; align-items: center;">
-                    <input type="text" placeholder='Search For Products' className='searchInput' style="padding-left: 40px; width: 100%; height: 40px; border: 1px solid #ccc; border-radius: 5px;" />
-                    <i class="fas fa-search" style="position: absolute; left: 10px; color: #666;"></i>
-                </div>
                 <div class="smallReview">
-                    <div>
-                        <h2>1100 <span>+</span></h2>
-                        <p>Happy Customer</p>
-                    </div>
+                    
 
                     <div>
                         <h2>1100 <span>+</span></h2>
                         <p>Happy Customer</p>
                     </div>
-
+                    <div>
+                        <h2>1100 <span>+</span></h2>
+                        <p>Happy Customer</p>
+                    </div>
                     <div>
                         <h2>1100 <span>+</span></h2>
                         <p>Happy Customer</p>

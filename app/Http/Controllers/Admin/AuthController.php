@@ -21,6 +21,12 @@ class AuthController extends Controller
         ]);
 
         if (Auth::guard('admin')->attempt($credentials, $request->boolean('remember'))) {
+            //remove all user of web
+            $user = Auth::guard('web')->user();
+            if ($user) {
+                Auth::guard('web')->logout();
+            }
+            // Authentication passed...
             $request->session()->regenerate();
             return redirect()->intended('/admin/dashboard');
         }

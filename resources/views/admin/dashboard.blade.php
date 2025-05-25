@@ -95,7 +95,10 @@
                         <tr>
                             <th>Order ID</th>
                             <th>User</th>
+                            <th>Address</th>
+                            <th>Phone</th>
                             <th>Total Price</th>
+                            <th>Ordered Items</th>
                             <th>Placed At</th>
                         </tr>
                     </thead>
@@ -104,7 +107,16 @@
                             <tr>
                                 <td>#{{ $order->id }}</td>
                                 <td>{{ $order->user->name ?? 'Guest' }}</td>
+                                <td>{{$order->address}}</td>
+                                <td>{{$order->phone}}</td>
                                 <td>${{ number_format($order->total_price, 2) }}</td>
+                                <td>
+                                    <ul>
+                                        @foreach($order->items as $item)
+                                            <li>{{ $item->product->name }} (x{{ $item->quantity }})</li>
+                                        @endforeach
+                                    </ul>
+                                </td>
                                 <td>{{ $order->created_at->format('d M Y, h:i A') }}</td>
                             </tr>
                         @endforeach
